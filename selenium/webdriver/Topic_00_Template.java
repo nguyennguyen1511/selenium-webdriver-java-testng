@@ -17,6 +17,7 @@ public class Topic_00_Template {
 
 	@BeforeClass
 	public void beforeClass() {
+		System.setProperty("webdriver.gecko.driver", projectPath +"/browser/geckodriver.exe");
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("http://demo.guru99.com/v4/");
