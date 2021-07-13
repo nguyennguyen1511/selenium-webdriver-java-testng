@@ -82,16 +82,18 @@ public class Topic_12_Popup {
 			driver.findElement(By.cssSelector("div.shopee-popup__close-btn")).click();
 		}
 		
-		driver.findElement(By.cssSelector("input.shopee-searchbar-input__input")).sendKeys("MacBook");
+		driver.findElement(By.cssSelector("input.shopee-searchbar-input__input")).sendKeys("macbook");
 		driver.findElement(By.cssSelector("button.btn-solid-primary")).click();
 		sleepInSecond(10);
 		
-		//List <WebElement> articalText = driver.findElements(By.cssSelector("div.yQmmFK"));
-		//for (WebElement artical : articalText) {
-			//System.out.println(artical.getText());
-			//Assert.assertTrue(artical.getText().contains("MacBook"));
+		List <WebElement> articalText = driver.findElements(By.cssSelector("div.yQmmFK"));
+		for (WebElement artical : articalText) {
+			System.out.println(artical.getText());
+			Assert.assertTrue(artical.getText().contains("macbook"));
+			Assert.assertTrue(artical.getText().toLowerCase().contains("MacBook"));
+			Assert.assertTrue(artical.getText().toLowerCase().matches("(.*)MacBook(.*)"));
 			
-		//}
+		}
 
 	}
 
