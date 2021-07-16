@@ -97,7 +97,6 @@ public class Topic_13_Frame_IFrame {
 		
 	}
 	public void scrollToBottomPage() {
-		//jsExecutor.executeScript("window.scrollBy(0,document.body.scrollHeight)");
 		jsExecutor.executeScript("window.scrollBy(0, document.body.scrollHeight)");
 	}
 
