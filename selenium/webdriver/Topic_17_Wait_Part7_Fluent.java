@@ -2,8 +2,8 @@ package webdriver;
 
 import java.time.Duration;
 import java.util.Date;
-import java.util.NoSuchElementException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 //import org.openqa.selenium.chrome.ChromeDriver;
@@ -35,14 +35,7 @@ public class Topic_17_Wait_Part7_Fluent {
 	public void TC_01_Fluent_TC09() {
 		driver.get("https://automationfc.github.io/dynamic-loading/");
 		
-		//driver.findElement(By.cssSelector("div#start>button")).click();
 		clickToElement(By.cssSelector("div#start>button"));
-		//explicitWait =  new WebDriverWait (driver, 15);
-		//explicitWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='finish']/h4[text()='Hello World!']")));
-		
-		//Assert.assertEquals(driver.findElement(By.xpath("//div[@id='finish']/h4[text()='Hello World!']")).getText(), "Hello World!");
-
-		
 		Assert.assertTrue(waitForElementAndDisplayed(By.xpath("//div[@id='finish']/h4[text()='Hello World!']")));
 		
 	}
@@ -98,7 +91,7 @@ public class Topic_17_Wait_Part7_Fluent {
 		WebElement element = getWebElement(locator);
 		FluentWait<WebElement> wait = new FluentWait<WebElement>(element)
 				.withTimeout(Duration.ofSeconds(15))
-				.pollingEvery(Duration.ofMillis(100))
+				.pollingEvery(Duration.ofSeconds(1))
 				.ignoring(NoSuchElementException.class);
 		
 		boolean isDisplayed = wait.until(new Function<WebElement,Boolean>(){
