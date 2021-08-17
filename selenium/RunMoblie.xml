@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="mobile" parallel="tests" thread-count="3">
+
+
+	<listeners>
+		<listerner class-name ="listernerCongig.TestListener" />
+	</listeners>
+	
+  	<test name="Run on FIREFOX">
+	<classes>
+		<class name="mobile.TC_01_Mobile" />
+	</classes>
+	</test>
+	
+</suite>
